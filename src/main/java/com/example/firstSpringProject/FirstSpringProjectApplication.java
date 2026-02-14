@@ -9,6 +9,6 @@ public class FirstSpringProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FirstSpringProjectApplication.class, args);
 	}
-    //checking push
-    //again
+
+
 }
