@@ -27,4 +27,15 @@ public class                                                                    
     public StudentEntity findStudentById(Long id) {
         return studentRepository.findById(id).orElseThrow(() -> new RuntimeException("Student not found"));
     }
+
+    @Override
+    public StudentEntity updateStudent(Long id, StudentEntity student) {
+        StudentEntity existingstudent = studentRepository.findById(id).orElseThrow(() -> new RuntimeException("Student not found to be updated"));
+        existingstudent.setName(student.getName());
+        existingstudent.setAge(student.getAge());
+        existingstudent.setPhone(student.getPhone());
+        existingstudent.setEmail(student.getEmail());
+        studentRepository.save(existingstudent);
+        return existingstudent;
+    }
 }

@@ -9,5 +9,6 @@ public interface StudentService {
 
     StudentEntity addStudent(StudentEntity student);
     StudentEntity findStudentById(Long id);
+    StudentEntity updateStudent(Long id, StudentEntity student);
 
 }
