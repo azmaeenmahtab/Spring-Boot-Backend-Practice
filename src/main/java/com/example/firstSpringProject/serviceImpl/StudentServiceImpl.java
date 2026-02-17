@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class StudentServiceImpl implements StudentService {
+public class                                                                                                                                                                                                                          StudentServiceImpl implements StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
@@ -18,5 +18,13 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.findAll();
     }
 
-    //checking push
+    @Override
+    public StudentEntity addStudent(StudentEntity student){
+        return studentRepository.save(student);
+    }
+
+    @Override
+    public StudentEntity findStudentById(Long id) {
+        return studentRepository.findById(id).orElseThrow(() -> new RuntimeException("Student not found"));
+    }
 }

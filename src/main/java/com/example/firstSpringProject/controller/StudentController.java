@@ -4,8 +4,7 @@ import com.example.firstSpringProject.entity.StudentEntity;
 import com.example.firstSpringProject.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,4 +22,16 @@ public class StudentController {
     public List<StudentEntity> ShowAll(){
         return studentService.ShowAllStudent();
     }
+
+    @PostMapping("/addStudent")
+    public StudentEntity addStudent(@RequestBody StudentEntity student) {
+        return studentService.addStudent(student);
+    }
+
+
+    @GetMapping("/showStudent/{id}")
+    public StudentEntity showStudentById(@PathVariable Long id){
+        return  studentService.findStudentById(id);
+    }
+
 }
