@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class StudentController {
     @Autowired
     private StudentService studentService;
@@ -16,6 +16,12 @@ public class StudentController {
     @GetMapping("/login")
     public String getLoginForm() {
         return "login";
+    }
+
+    @GetMapping("/showAllPage")
+    public String ShowAllStudentPage(){
+        List<StudentEntity> allStudents = studentService.ShowAllStudent() ;
+        return "showAll";
     }
 
     @GetMapping("/showAll")
