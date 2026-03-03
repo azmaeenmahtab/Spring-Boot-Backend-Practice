@@ -15,13 +15,13 @@ public class StudentController {
 
     @GetMapping("/login")
     public String getLoginForm() {
-        return "login";
+        return "login"; // if i want to use themeleaf to show data from this backend then i need to learn this but i will be using nextjs so no need to learn this now.
     }
 
     @GetMapping("/showAllPage")
     public String ShowAllStudentPage(){
         List<StudentEntity> allStudents = studentService.ShowAllStudent() ;
-        return "showAll";
+        return "showAll"; // if i want to use themeleaf to show data from this backend then i need to learn this but i will be using nextjs so no need to learn this now.
     }
 
     @GetMapping("/showAll")
